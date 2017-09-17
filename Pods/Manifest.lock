@@ -1,0 +1,24 @@
+PODS:
+  - Action (3.1.1):
+    - RxCocoa (~> 3.4)
+    - RxSwift (~> 3.4)
+  - RxCocoa (3.6.1):
+    - RxSwift (~> 3.6)
+  - RxSwift (3.6.1)
+  - SwiftLint (0.22.0)
+
+DEPENDENCIES:
+  - Action
+  - RxCocoa
+  - RxSwift
+  - SwiftLint
+
+SPEC CHECKSUMS:
+  Action: e224bd151fe2e057f4189b4a9df0dc5d21264a9e
+  RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
+  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  SwiftLint: 1134786caedd2caab0560d2f36b76414a5a56808
+
+PODFILE CHECKSUM: f221cde0ae0ca7a26cbc79449af6322dffdd773b
+
+COCOAPODS: 1.2.1
