@@ -22,6 +22,8 @@ class RootCoordinator {
     return navController
   }()
   
+  fileprivate let dataDependencies = DataDependencies()
+  
   // MARK: - INITIALIZER
   
   init(window: UIWindow) {
@@ -35,7 +37,7 @@ class RootCoordinator {
 extension RootCoordinator: Coordinator {
   
   func start() {
-    let pokedexListCoordinator = PokedexListCoordinator(navigationController: navigationController)
+    let pokedexListCoordinator = PokedexListCoordinator(navigationController: navigationController, dataDependencies: dataDependencies)
     pokedexListCoordinator.start()
   }
   
