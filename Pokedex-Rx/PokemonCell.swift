@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PokemonCell: UICollectionViewCell {
+class PokemonCell: UICollectionViewCell, Roundable {
   
   // MARK: - IBOUTLETS
   
@@ -19,6 +19,7 @@ class PokemonCell: UICollectionViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    rounded(with: 3.0)
   }
   
   // MARK: - CONFIGURATION

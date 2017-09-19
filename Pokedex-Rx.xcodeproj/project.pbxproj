@@ -36,6 +36,7 @@
 		E0196AC71F703C8E0066E959 /* PokemonCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0196AC61F703C8D0066E959 /* PokemonCellViewModel.swift */; };
 		E0196AC91F7192E40066E959 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0196AC81F7192E40066E959 /* Result.swift */; };
 		E0196ACB1F7199190066E959 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0196ACA1F7199190066E959 /* Alertable.swift */; };
+		E0196ACD1F71B2A60066E959 /* Roundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0196ACC1F71B2A60066E959 /* Roundable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		E0196AC61F703C8D0066E959 /* PokemonCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonCellViewModel.swift; sourceTree = "<group>"; };
 		E0196AC81F7192E40066E959 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		E0196ACA1F7199190066E959 /* Alertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		E0196ACC1F71B2A60066E959 /* Roundable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roundable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				E0196AA71F6ECDA00066E959 /* Identifiable.swift */,
 				E0196AC41F6F02850066E959 /* DataDependenciesProtocols.swift */,
 				E0196ACA1F7199190066E959 /* Alertable.swift */,
+				E0196ACC1F71B2A60066E959 /* Roundable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				E0196A9F1F6EC7FE0066E959 /* PokedexListViewModel.swift in Sources */,
 				E0196AC71F703C8E0066E959 /* PokemonCellViewModel.swift in Sources */,
 				E0196AC11F6F01CD0066E959 /* PokemonService.swift in Sources */,
+				E0196ACD1F71B2A60066E959 /* Roundable.swift in Sources */,
 				E0196AAA1F6ECDC90066E959 /* UICollectionView.swift in Sources */,
 				E0196ABA1F6EF0860066E959 /* PokemonParser.swift in Sources */,
 				E0196ABC1F6EF0DF0066E959 /* CSVParser.swift in Sources */,
