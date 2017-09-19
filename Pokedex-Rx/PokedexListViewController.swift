@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class PokedexListViewController: UIViewController {
+class PokedexListViewController: UIViewController, Alertable {
   
   // MARK: - DEPENDENCIES
   
@@ -41,13 +41,22 @@ class PokedexListViewController: UIViewController {
   // MARK: - BINDINGS
   
   private func bindCollectionView() {
-    viewModel.dataSource.asObservable()
+    
+    viewModel.dataSource
+      .catchError { [weak self] error in
+        if let err = error as? PokedexError {
+          self?.showAlert(with: err.description)
+        } else {
+          self?.showAlert(with: error.localizedDescription)
+        }
+        return Observable.empty()
+      }
       .bind(to: collectionView.rx.items(cellIdentifier: PokemonCell.identifier, cellType: PokemonCell.self))
       { (_, model, cell) in
         cell.configure(with: model)
       }
       .disposed(by: bag)
-
+    
   }
   
   private func bindSearchBar() {
