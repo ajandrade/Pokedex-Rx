@@ -36,7 +36,6 @@ class PokedexListViewController: UIViewController, Alertable {
     super.viewDidLoad()
     bindCollectionView()
     bindSearchBar()
-    bindKeyboard()
   }
   
   // MARK: - BINDINGS
@@ -58,6 +57,13 @@ class PokedexListViewController: UIViewController, Alertable {
       }
       .disposed(by: bag)
     
+    collectionView.rx
+      .modelSelected(PokemonCellViewModelRepresentable.self)
+      .subscribe(onNext: { cellViewModel in
+        print("Selected: \(cellViewModel.name)")
+      })
+      .disposed(by: bag)
+    
   }
   
   private func bindSearchBar() {
@@ -70,18 +76,9 @@ class PokedexListViewController: UIViewController, Alertable {
     
     searchBar.rx
       .searchButtonClicked
-      .subscribe(onNext: { [weak self] _ in self?.endEditing() })
+      .subscribe(onNext: { [weak self] _ in self?.view.endEditing(true) })
       .disposed(by: bag)
     
-  }
-  
-  private func bindKeyboard() {
-    let tap = UITapGestureRecognizer(target: self, action: #selector(endEditing))
-    view.addGestureRecognizer(tap)
-  }
-  
-  @objc private func endEditing() {
-    view.endEditing(true)
   }
   
 }
