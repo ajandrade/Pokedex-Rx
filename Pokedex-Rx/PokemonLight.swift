@@ -9,14 +9,8 @@
 import UIKit
 
 struct PokemonLight {
-  
-  // MARK: - PROPERTIES
-  
+    
   let pokedexId: String
   let name: String
-  
-  var image: UIImage? {
-    return UIImage(named: "\(pokedexId)")
-  }
 
 }
