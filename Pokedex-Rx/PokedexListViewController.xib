@@ -67,7 +67,7 @@
                         <constraint firstAttribute="height" constant="44" id="0if-Q5-uq4"/>
                     </constraints>
                     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                 </searchBar>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lTX-cV-yeQ">
                     <rect key="frame" x="20" y="124" width="335" height="523"/>
