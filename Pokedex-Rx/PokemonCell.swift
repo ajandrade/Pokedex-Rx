@@ -21,6 +21,13 @@ class PokemonCell: UICollectionViewCell {
     super.awakeFromNib()
   }
   
+  // MARK: - CONFIGURATION
+  
+  func configure(with viewModel: PokemonCellViewModelRepresentable) {
+    pokemonNameLabel.text = viewModel.name
+    pokemonImageView.image = UIImage(named: viewModel.imageName)
+  }
+  
   // MARK: - REUSE
   
   override func prepareForReuse() {
