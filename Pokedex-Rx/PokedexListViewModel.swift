@@ -9,12 +9,14 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Action
 
 protocol PokedexListViewModelRepresentable {
   // Inputs
   var textToSearch: PublishSubject<String> { get }
   // Outputs
   var dataSource: Observable<[PokemonCellViewModelRepresentable]> { get }
+  var showDetails: Action<String, Void> { get }
 }
 
 class PokedexListViewModel: PokedexListViewModelRepresentable {
@@ -39,6 +41,7 @@ class PokedexListViewModel: PokedexListViewModelRepresentable {
   var dataSource: Observable<[PokemonCellViewModelRepresentable]> {
     return inputDataSource.asObservable()
   }
+  var showDetails: Action<String, Void>
   
   // MARK: - INITIALIZER
   
@@ -56,13 +59,19 @@ class PokedexListViewModel: PokedexListViewModelRepresentable {
       inputDataSource.onError(err)
     }
     
+    showDetails = Action { id in
+      print(id)
+      // TODO: - perform navigation
+      return Observable.empty()
+    }
+    
     textToSearch
       .subscribe(onNext: { text in
         let filteredData = self.allData.filter { $0.name.hasPrefix(text) }
         self.inputDataSource.onNext(filteredData)
       })
       .disposed(by: bag)
-
+    
   }
 
 

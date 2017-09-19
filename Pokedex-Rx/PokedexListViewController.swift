@@ -59,9 +59,8 @@ class PokedexListViewController: UIViewController, Alertable {
     
     collectionView.rx
       .modelSelected(PokemonCellViewModelRepresentable.self)
-      .subscribe(onNext: { cellViewModel in
-        print("Selected: \(cellViewModel.name)")
-      })
+      .map { $0.id }
+      .bind(to: viewModel.showDetails.inputs)
       .disposed(by: bag)
     
   }

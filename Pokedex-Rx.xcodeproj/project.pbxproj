@@ -37,6 +37,7 @@
 		E0196AC91F7192E40066E959 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0196AC81F7192E40066E959 /* Result.swift */; };
 		E0196ACB1F7199190066E959 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0196ACA1F7199190066E959 /* Alertable.swift */; };
 		E0196ACD1F71B2A60066E959 /* Roundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0196ACC1F71B2A60066E959 /* Roundable.swift */; };
+		E0196ACF1F71B49D0066E959 /* NavigationTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0196ACE1F71B49D0066E959 /* NavigationTransitionType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		E0196AC81F7192E40066E959 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		E0196ACA1F7199190066E959 /* Alertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		E0196ACC1F71B2A60066E959 /* Roundable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roundable.swift; sourceTree = "<group>"; };
+		E0196ACE1F71B49D0066E959 /* NavigationTransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTransitionType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 		E0196ABD1F6EFB0F0066E959 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				E0196ACE1F71B49D0066E959 /* NavigationTransitionType.swift */,
 				E0196ABE1F6EFB1C0066E959 /* PokedexError.swift */,
 				E0196AC81F7192E40066E959 /* Result.swift */,
 			);
@@ -419,6 +422,7 @@
 				E0196A9C1F6EC7F20066E959 /* PokedexListViewController.swift in Sources */,
 				E0196AC91F7192E40066E959 /* Result.swift in Sources */,
 				E0196AAC1F6ECDDD0066E959 /* UICollectionViewCell.swift in Sources */,
+				E0196ACF1F71B49D0066E959 /* NavigationTransitionType.swift in Sources */,
 				E0196ABF1F6EFB1C0066E959 /* PokedexError.swift in Sources */,
 				E0196AC51F6F02850066E959 /* DataDependenciesProtocols.swift in Sources */,
 				E0196A9F1F6EC7FE0066E959 /* PokedexListViewModel.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 
 struct PokemonLight {
-    
+
   let pokedexId: String
   let name: String
 
