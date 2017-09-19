@@ -9,7 +9,7 @@
 import RxSwift
 
 protocol PokemonParserProtocol {
-  func parsePokemonFile() -> Observable<[PokemonLight]>
+  func parsePokemonFile() -> Result<[PokemonLight]>
 }
 
 struct PokemonParser: PokemonParserProtocol {
@@ -31,26 +31,21 @@ struct PokemonParser: PokemonParserProtocol {
   
   // MARK: - METHODS
   
-  func parsePokemonFile() -> Observable<[PokemonLight]> {
-    return Observable.create { observer in
-      guard let path = Bundle.main.path(forResource: File.pokemon.rawValue, ofType: File.pokemon.type) else {
-        observer.onError(PokedexError.fileNotFound)
-        return Disposables.create()
+  func parsePokemonFile() -> Result<[PokemonLight]> {
+    guard let path = Bundle.main.path(forResource: File.pokemon.rawValue, ofType: File.pokemon.type) else {
+      return .failure(PokedexError.fileNotFound)
+    }
+    do {
+      let csv = try CSVParser(contentsOfURL: path)
+      var pokemonList = [PokemonLight]()
+      csv.rows.forEach { row in
+        guard let name = row[Field.identifier.rawValue], let id = row[Field.id.rawValue] else { return }
+        let pokemon = PokemonLight(pokedexId: id, name: name)
+        pokemonList.append(pokemon)
       }
-      do {
-        let csv = try CSVParser(contentsOfURL: path)
-        var pokemonList = [PokemonLight]()
-        csv.rows.forEach { row in
-          guard let name = row[Field.identifier.rawValue], let id = row[Field.id.rawValue] else { return }
-          let pokemon = PokemonLight(pokedexId: id, name: name)
-          pokemonList.append(pokemon)
-        }
-        observer.onNext(pokemonList)
-      } catch {
-        observer.onError(PokedexError.parse)
-      }
-      observer.onCompleted()
-      return Disposables.create()
+      return .success(pokemonList)
+    } catch {
+      return .failure(PokedexError.parse)
     }
   }
   
