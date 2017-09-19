@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PokedexListViewController: UIViewController {
   
@@ -14,9 +16,17 @@ class PokedexListViewController: UIViewController {
   
   var viewModel: PokedexListViewModelRepresentable!
   
+  // MARK: - PROPERTIES
+  
+  private let bag = DisposeBag()
+  
   // MARK: - IBOUTLETS
   
-  @IBOutlet private weak var collectionView: UICollectionView!
+  @IBOutlet private weak var collectionView: UICollectionView! {
+    didSet {
+      collectionView.register(PokemonCell.self)
+    }
+  }
   @IBOutlet private weak var musicButton: UIButton!
   @IBOutlet private weak var searchBar: UISearchBar!
   
@@ -24,6 +34,13 @@ class PokedexListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+        
+    viewModel.dataSource.asObservable()
+      .bind(to: collectionView.rx.items(cellIdentifier: PokemonCell.identifier, cellType: PokemonCell.self))
+      { (_, model, cell) in
+        cell.configure(with: model)
+      }
+      .disposed(by: bag)
   }
   
 }
