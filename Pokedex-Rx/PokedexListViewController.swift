@@ -34,21 +34,29 @@ class PokedexListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-        
+    bindCollectionView()
+    bindSearchBar()
+  }
+  
+  // MARK: - BINDINGS
+  
+  private func bindCollectionView() {
     viewModel.dataSource.asObservable()
       .bind(to: collectionView.rx.items(cellIdentifier: PokemonCell.identifier, cellType: PokemonCell.self))
       { (_, model, cell) in
         cell.configure(with: model)
       }
       .disposed(by: bag)
-    
+
+  }
+  
+  private func bindSearchBar() {
     searchBar.rx
       .text
       .orEmpty
       .skip(1)
       .bind(to: viewModel.textToSearch)
       .disposed(by: bag)
-    
   }
   
 }
