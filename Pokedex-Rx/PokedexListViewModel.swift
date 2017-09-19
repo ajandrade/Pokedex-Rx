@@ -11,9 +11,10 @@ import RxSwift
 import RxCocoa
 
 protocol PokedexListViewModelRepresentable {
-
+  // Inputs
+  var textToSearch: PublishSubject<String> { get }
+  // Outputs
   var dataSource: Observable<[PokemonCellViewModelRepresentable]> { get }
-  
 }
 
 class PokedexListViewModel: PokedexListViewModelRepresentable {
@@ -31,7 +32,8 @@ class PokedexListViewModel: PokedexListViewModelRepresentable {
 
   // MARK: - INPUT PROPERTIES
   
-  
+  let textToSearch = PublishSubject<String>()
+
   // MARK: - OUTPUT PROPERTIES
   
   var dataSource: Observable<[PokemonCellViewModelRepresentable]> {
@@ -53,6 +55,13 @@ class PokedexListViewModel: PokedexListViewModelRepresentable {
       allData = []
       inputDataSource.onError(err)
     }
+    
+    textToSearch
+      .subscribe(onNext: { text in
+        let filteredData = self.allData.filter { $0.name.hasPrefix(text) }
+        self.inputDataSource.onNext(filteredData)
+      })
+      .disposed(by: bag)
 
   }
 

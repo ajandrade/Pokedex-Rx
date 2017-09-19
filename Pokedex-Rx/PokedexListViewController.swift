@@ -41,6 +41,14 @@ class PokedexListViewController: UIViewController {
         cell.configure(with: model)
       }
       .disposed(by: bag)
+    
+    searchBar.rx
+      .text
+      .orEmpty
+      .skip(1)
+      .bind(to: viewModel.textToSearch)
+      .disposed(by: bag)
+    
   }
   
 }
