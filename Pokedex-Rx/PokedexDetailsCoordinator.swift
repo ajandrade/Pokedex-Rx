@@ -7,12 +7,32 @@
 //
 
 import UIKit
+import RxSwift
+import Action
+
+protocol PokedexDetailsNavigation {
+  var dismiss: CocoaAction { get }
+}
 
 class PokedexDetailsCoordinator {
 
-  private let pokemonId: String
+  // MARK: - DEPENDENCIES
   
-  init(pokemonId: String) {
+  fileprivate let navigator: NavigatorRepresentable
+  fileprivate let dataDependencies: DataDependencies
+  fileprivate let pokemonId: String
+  
+  // MARK: - NAVIGATION
+  
+  fileprivate struct Navigation: PokedexDetailsNavigation {
+    let dismiss: CocoaAction
+  }
+
+  // MARK: - INITIALIZER
+  
+  init(navigator: NavigatorRepresentable, dataDependencies: DataDependencies, pokemonId: String) {
+    self.navigator = navigator
+    self.dataDependencies = dataDependencies
     self.pokemonId = pokemonId
   }
   
@@ -21,7 +41,18 @@ class PokedexDetailsCoordinator {
 extension PokedexDetailsCoordinator: Coordinator {
 
   func start() {
+    let pokedexDetailsViewController = PokedexDetailsViewController()
     
+    let dismiss = CocoaAction {
+      self.navigator.dismiss()
+      return Observable.empty()
+    }
+    
+    let navigation = Navigation(dismiss: dismiss)
+    
+    let pokedexDetailsViewModel = PokedexDetailsViewModel(dataDependencies: dataDependencies, navigation: navigation, pokemonId: pokemonId)
+    pokedexDetailsViewController.viewModel = pokedexDetailsViewModel
+    navigator.transition(to: pokedexDetailsViewController, type: .push)
   }
   
 }

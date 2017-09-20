@@ -21,6 +21,8 @@ class PokedexListCoordinator {
   fileprivate let navigator: NavigatorRepresentable
   fileprivate let dataDependencies: DataDependencies
   
+  // MARK: - NAVIGATION
+  
   fileprivate struct Navigation: PokedexListNavigation {
     let showDetails: Action<String, Void>
   }
@@ -40,7 +42,7 @@ extension PokedexListCoordinator: Coordinator {
     let pokedexListViewController = PokedexListViewController()
     
     let showDetails = Action<String, Void> { pokemonId in
-      let podedexDetailsCoordinator = PokedexDetailsCoordinator(pokemonId: pokemonId)
+      let podedexDetailsCoordinator = PokedexDetailsCoordinator(navigator: self.navigator, dataDependencies: self.dataDependencies, pokemonId: pokemonId)
       podedexDetailsCoordinator.start()
       return Observable.empty()
     }
