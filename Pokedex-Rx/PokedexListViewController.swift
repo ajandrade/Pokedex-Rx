@@ -51,15 +51,14 @@ class PokedexListViewController: UIViewController, Alertable {
         }
         return Observable.empty()
       }
-      .bind(to: collectionView.rx.items(cellIdentifier: PokemonCell.identifier, cellType: PokemonCell.self))
-      { (_, model, cell) in
+      .bind(to: collectionView.rx.items(cellIdentifier: PokemonCell.identifier, cellType: PokemonCell.self)) { (_, model, cell) in
         cell.configure(with: model)
       }
       .disposed(by: bag)
     
     collectionView.rx
       .modelSelected(PokemonCellViewModelRepresentable.self)
-      .map { $0.id }
+      .map { $0.pokemonId }
       .bind(to: viewModel.showDetails.inputs)
       .disposed(by: bag)
     

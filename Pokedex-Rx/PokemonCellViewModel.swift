@@ -9,19 +9,19 @@
 import Foundation
 
 protocol PokemonCellViewModelRepresentable {
-  var id: String { get }
+  var pokemonId: String { get }
   var name: String { get }
   var imageName: String { get }
 }
 
 struct PokemonCellViewModel: PokemonCellViewModelRepresentable {
   
-  let id: String
+  let pokemonId: String
   let name: String
   let imageName: String
   
   init(pokemonLight: PokemonLight) {
-    id = pokemonLight.pokedexId
+    pokemonId = pokemonLight.pokedexId
     name = pokemonLight.name.capitalized
     imageName = pokemonLight.pokedexId
   }

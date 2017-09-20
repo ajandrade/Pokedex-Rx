@@ -13,22 +13,18 @@ class RootCoordinator {
   // MARK: - DEPENDENCIES
   
   private let window: UIWindow
+  fileprivate let navigator: NavigatorRepresentable
   
   // MARK: - PROPERTIES
-  
-  fileprivate let navigationController: UINavigationController = {
-    let navController = UINavigationController()
-    navController.setNavigationBarHidden(true, animated: false)
-    return navController
-  }()
   
   fileprivate let dataDependencies = DataDependencies()
   
   // MARK: - INITIALIZER
   
-  init(window: UIWindow) {
+  init(window: UIWindow, navigator: NavigatorRepresentable) {
     self.window = window
-    self.window.rootViewController = navigationController
+    self.navigator = navigator
+    self.window.rootViewController = navigator.root()
     self.window.makeKeyAndVisible()
   }
   
@@ -37,7 +33,7 @@ class RootCoordinator {
 extension RootCoordinator: Coordinator {
   
   func start() {
-    let pokedexListCoordinator = PokedexListCoordinator(navigationController: navigationController, dataDependencies: dataDependencies)
+    let pokedexListCoordinator = PokedexListCoordinator(navigator: navigator, dataDependencies: dataDependencies)
     pokedexListCoordinator.start()
   }
   

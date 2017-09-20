@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // swiftlint:disable line_length
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow()
-    let rootCoordinator = RootCoordinator(window: window!)
+    let navigator = Navigator()
+    let rootCoordinator = RootCoordinator(window: window!, navigator: navigator)
     rootCoordinator.start()
     return true
   }

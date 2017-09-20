@@ -45,7 +45,7 @@ class PokedexListViewModel: PokedexListViewModelRepresentable {
   
   // MARK: - INITIALIZER
   
-  init(dataDependencies: DependenciesList) {
+  init(dataDependencies: DependenciesList, navigation: PokedexListNavigation) {
     self.dataDependencies = dataDependencies
     
     let parsedData = dataDependencies.parserService.parsePokemonFile()
@@ -59,11 +59,7 @@ class PokedexListViewModel: PokedexListViewModelRepresentable {
       inputDataSource.onError(err)
     }
     
-    showDetails = Action { id in
-      print(id)
-      // TODO: - perform navigation
-      return Observable.empty()
-    }
+    showDetails = navigation.showDetails
     
     textToSearch
       .subscribe(onNext: { text in
