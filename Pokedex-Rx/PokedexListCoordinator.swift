@@ -40,17 +40,21 @@ extension PokedexListCoordinator: Coordinator {
   
   func start() {
     let pokedexListViewController = PokedexListViewController()
-    
+    let navigation = buildNavigationActions()
+    let pokedexListViewModel = PokedexListViewModel(dataDependencies: dataDependencies, navigation: navigation)
+    pokedexListViewController.viewModel = pokedexListViewModel
+    navigator.transition(to: pokedexListViewController, type: .root)
+  }
+  
+  private func buildNavigationActions() -> Navigation {
+    // show details
     let showDetails = Action<String, Void> { pokemonId in
       let podedexDetailsCoordinator = PokedexDetailsCoordinator(navigator: self.navigator, dataDependencies: self.dataDependencies, pokemonId: pokemonId)
       podedexDetailsCoordinator.start()
       return Observable.empty()
     }
-    let navigation = Navigation(showDetails: showDetails)
     
-    let pokedexListViewModel = PokedexListViewModel(dataDependencies: dataDependencies, navigation: navigation)
-    pokedexListViewController.viewModel = pokedexListViewModel
-    navigator.transition(to: pokedexListViewController, type: .root)
+    return Navigation(showDetails: showDetails)
   }
   
 }

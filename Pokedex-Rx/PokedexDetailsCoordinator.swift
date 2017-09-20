@@ -42,17 +42,20 @@ extension PokedexDetailsCoordinator: Coordinator {
 
   func start() {
     let pokedexDetailsViewController = PokedexDetailsViewController()
-    
+    let navigation = buildNavigationActions()
+    let pokedexDetailsViewModel = PokedexDetailsViewModel(dataDependencies: dataDependencies, navigation: navigation, pokemonId: pokemonId)
+    pokedexDetailsViewController.viewModel = pokedexDetailsViewModel
+    navigator.transition(to: pokedexDetailsViewController, type: .push)
+  }
+  
+  private func buildNavigationActions() -> Navigation {
+    // Dismiss
     let dismiss = CocoaAction {
       self.navigator.dismiss()
       return Observable.empty()
     }
     
-    let navigation = Navigation(dismiss: dismiss)
-    
-    let pokedexDetailsViewModel = PokedexDetailsViewModel(dataDependencies: dataDependencies, navigation: navigation, pokemonId: pokemonId)
-    pokedexDetailsViewController.viewModel = pokedexDetailsViewModel
-    navigator.transition(to: pokedexDetailsViewController, type: .push)
+    return Navigation(dismiss: dismiss)
   }
   
 }
