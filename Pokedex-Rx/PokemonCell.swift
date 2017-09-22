@@ -14,12 +14,11 @@ class PokemonCell: UICollectionViewCell, Roundable {
   
   @IBOutlet private weak var pokemonNameLabel: UILabel!
   @IBOutlet private weak var pokemonImageView: UIImageView!
-  
   // MARK: - INITIALIZATION
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    rounded(with: 3.0)
+    rounded(with: 5.0)
   }
   
   // MARK: - CONFIGURATION
