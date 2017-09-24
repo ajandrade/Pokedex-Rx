@@ -12,6 +12,9 @@
         <array key="Pokemon.ttf">
             <string>PokemonSolidNormal</string>
         </array>
+        <array key="Pokemon2.ttf">
+            <string>PokemonPuzzleChallengeGB</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PokedexDetailsViewController" customModule="Pokedex_Rx" customModuleProvider="target">
@@ -59,29 +62,389 @@
                         <constraint firstItem="mgc-JP-Pry" firstAttribute="leading" secondItem="97a-Zy-HsX" secondAttribute="leading" constant="8" id="zEX-cv-bXm"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5hw-4a-SXp">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEO-4W-uSo">
                     <rect key="frame" x="0.0" y="60" width="375" height="607"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </tableView>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZa-tF-edo">
+                            <rect key="frame" x="0.0" y="10" width="375" height="607"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="biD-on-xGA" userLabel="infoSV">
+                                    <rect key="frame" x="20" y="5" width="335" height="160.5"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fv2-AP-uz0">
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="160.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="o0b-0c-mcl" userLabel="pokemonImg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="130" id="5X0-bX-S1g"/>
+                                                        <constraint firstAttribute="width" constant="130" id="Zdn-42-L4V"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pikachu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dXl-x5-xKD" userLabel="pokeNameLbl">
+                                                    <rect key="frame" x="0.0" y="130.5" width="130" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="32A-gt-wAd"/>
+                                                        <constraint firstAttribute="width" constant="130" id="9I6-O8-THr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6fZ-kT-xS8" userLabel="infoSV">
+                                            <rect key="frame" x="145" y="0.0" width="190" height="160.5"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dcN-ee-OVy" userLabel="pokeIDSV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="83.5" height="36.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poke ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2j4-Gg-Vho">
+                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="36.5"/>
+                                                            <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="13"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lox-g9-fXK">
+                                                            <rect key="frame" x="75" y="0.0" width="8.5" height="36.5"/>
+                                                            <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="13"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="98f-vX-bUj" userLabel="heightSV">
+                                                    <rect key="frame" x="0.0" y="41.5" width="73.5" height="36.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eX5-kB-WrB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="57" height="36.5"/>
+                                                            <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="13"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWr-ct-nJC">
+                                                            <rect key="frame" x="62" y="0.0" width="11.5" height="36.5"/>
+                                                            <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="13"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hpz-qb-hW7" userLabel="weightSV">
+                                                    <rect key="frame" x="0.0" y="83" width="94.5" height="36"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uk-Ef-vwm">
+                                                            <rect key="frame" x="0.0" y="0.0" width="58.5" height="36"/>
+                                                            <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="13"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6g0-w5-opj">
+                                                            <rect key="frame" x="63.5" y="0.0" width="31" height="36"/>
+                                                            <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="13"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iQY-xu-1MI" userLabel="typeSV">
+                                                    <rect key="frame" x="0.0" y="124" width="190" height="36.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N6-JV-0sc">
+                                                            <rect key="frame" x="0.0" y="0.0" width="47.5" height="36.5"/>
+                                                            <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="13"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="stuff and stuff2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbI-yI-qQo">
+                                                            <rect key="frame" x="52.5" y="0.0" width="137.5" height="36.5"/>
+                                                            <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="13"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibq-IM-Y3S" userLabel="statsBar">
+                                    <rect key="frame" x="0.0" y="180.5" width="375" height="30"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vsh-BU-30H">
+                                            <rect key="frame" x="8" y="8" width="52.5" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="GQa-Xl-u7W"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="Vsh-BU-30H" firstAttribute="top" secondItem="ibq-IM-Y3S" secondAttribute="top" constant="8" id="ITi-sU-3mQ"/>
+                                        <constraint firstAttribute="height" constant="30" id="QnG-t1-VOr"/>
+                                        <constraint firstItem="Vsh-BU-30H" firstAttribute="leading" secondItem="ibq-IM-Y3S" secondAttribute="leading" constant="8" id="VYp-jt-TZc"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zaQ-Ju-G6R" userLabel="statsSV">
+                                    <rect key="frame" x="20" y="230.5" width="335" height="166"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0bw-0S-xSK" userLabel="hpSV">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="21"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVl-kT-c3p">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="8LW-TL-Tad"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyi-GC-lcr">
+                                                    <rect key="frame" x="50" y="0.0" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="ISz-DG-cIk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jUT-2T-N2Y">
+                                                    <rect key="frame" x="100" y="0.0" width="235" height="21"/>
+                                                    <color key="progressTintColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="trackTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </progressView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="VLg-hE-1vc"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FAY-JF-MDS" userLabel="atkSV">
+                                            <rect key="frame" x="0.0" y="29" width="335" height="21"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATK:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGd-Pl-we9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="zlQ-vP-fSX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dZ-V3-Dgt">
+                                                    <rect key="frame" x="50" y="0.0" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="0Ed-wy-te0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oOw-QE-J3L">
+                                                    <rect key="frame" x="100" y="0.0" width="235" height="21"/>
+                                                    <color key="progressTintColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="trackTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </progressView>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fC2-MP-wrr" userLabel="defSV">
+                                            <rect key="frame" x="0.0" y="58" width="335" height="21"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEF:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFI-FN-scY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="9TE-ha-kvr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgS-aC-GLE">
+                                                    <rect key="frame" x="50" y="0.0" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="qxL-E3-AIB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c5a-gt-dBj">
+                                                    <rect key="frame" x="100" y="0.0" width="235" height="21"/>
+                                                    <color key="progressTintColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="trackTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </progressView>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="h6u-Ha-eX3" userLabel="speSV">
+                                            <rect key="frame" x="0.0" y="87" width="335" height="21"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPE:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXu-oT-89F">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="ned-dk-3OX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dco-Iw-Boh">
+                                                    <rect key="frame" x="50" y="0.0" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="E1d-cG-a6G"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oBn-2S-BHB">
+                                                    <rect key="frame" x="100" y="0.0" width="235" height="21"/>
+                                                    <color key="progressTintColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="trackTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </progressView>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uoA-Ke-CWj" userLabel="spaSV">
+                                            <rect key="frame" x="0.0" y="116" width="335" height="21"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPA:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3s-DI-FcI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="8OU-Sk-pzE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQN-vi-WtK">
+                                                    <rect key="frame" x="50" y="0.0" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="a7n-ln-v8Z"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MRw-BI-s1i">
+                                                    <rect key="frame" x="100" y="0.0" width="235" height="21"/>
+                                                    <color key="progressTintColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="trackTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </progressView>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Pzk-2s-CE4" userLabel="spdSV">
+                                            <rect key="frame" x="0.0" y="145" width="335" height="21"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPD:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaK-T8-gEI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="zi5-m1-PGn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dN-T1-lkG">
+                                                    <rect key="frame" x="50" y="0.0" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="2T4-Lu-VF0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tIt-6F-vuo">
+                                                    <rect key="frame" x="100" y="0.0" width="235" height="21"/>
+                                                    <color key="progressTintColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="trackTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </progressView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHV-Lb-cdo" userLabel="evoBar">
+                                    <rect key="frame" x="0.0" y="411.5" width="375" height="30"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Evolution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZA-bp-NOq">
+                                            <rect key="frame" x="8" y="8" width="129.5" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="M8D-ku-dVK"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="rZA-bp-NOq" firstAttribute="leading" secondItem="IHV-Lb-cdo" secondAttribute="leading" constant="8" id="I6Q-2m-dhF"/>
+                                        <constraint firstItem="rZA-bp-NOq" firstAttribute="top" secondItem="IHV-Lb-cdo" secondAttribute="top" constant="8" id="PPr-zn-Mhp"/>
+                                        <constraint firstAttribute="height" constant="30" id="laV-Gr-e5I"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ksR-mU-gb3">
+                                    <rect key="frame" x="130" y="451.5" width="115" height="140"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="dBu-0B-kMN">
+                                            <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="115" id="5VU-WI-Tda"/>
+                                                <constraint firstAttribute="height" constant="115" id="APS-ni-Fyb"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cl7-PY-vUa">
+                                            <rect key="frame" x="0.0" y="115" width="115" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="rk9-dY-b6C"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="biD-on-xGA" secondAttribute="trailing" constant="20" id="24g-92-cjt"/>
+                                <constraint firstItem="zaQ-Ju-G6R" firstAttribute="leading" secondItem="VZa-tF-edo" secondAttribute="leading" constant="20" id="8CF-KY-Onm"/>
+                                <constraint firstItem="biD-on-xGA" firstAttribute="leading" secondItem="VZa-tF-edo" secondAttribute="leading" constant="20" id="9aE-vJ-jK0"/>
+                                <constraint firstAttribute="height" constant="607" id="AIb-QM-Cya"/>
+                                <constraint firstItem="IHV-Lb-cdo" firstAttribute="leading" secondItem="VZa-tF-edo" secondAttribute="leading" id="AUy-U9-Ri6"/>
+                                <constraint firstAttribute="trailing" secondItem="zaQ-Ju-G6R" secondAttribute="trailing" constant="20" id="D9V-BX-w18"/>
+                                <constraint firstItem="ibq-IM-Y3S" firstAttribute="leading" secondItem="VZa-tF-edo" secondAttribute="leading" id="Tdy-uO-kw5"/>
+                                <constraint firstItem="zaQ-Ju-G6R" firstAttribute="top" secondItem="ibq-IM-Y3S" secondAttribute="bottom" constant="20" id="Tgl-su-83C"/>
+                                <constraint firstAttribute="trailing" secondItem="ibq-IM-Y3S" secondAttribute="trailing" id="VCJ-Z6-Hsg"/>
+                                <constraint firstItem="biD-on-xGA" firstAttribute="top" secondItem="VZa-tF-edo" secondAttribute="top" constant="5" id="WWS-OW-tJB"/>
+                                <constraint firstAttribute="trailing" secondItem="IHV-Lb-cdo" secondAttribute="trailing" id="Wwz-xT-IPN"/>
+                                <constraint firstItem="IHV-Lb-cdo" firstAttribute="top" secondItem="zaQ-Ju-G6R" secondAttribute="bottom" constant="15" id="hrV-0r-SL9"/>
+                                <constraint firstItem="ksR-mU-gb3" firstAttribute="top" secondItem="IHV-Lb-cdo" secondAttribute="bottom" constant="10" id="iKS-S9-vee"/>
+                                <constraint firstItem="ibq-IM-Y3S" firstAttribute="top" secondItem="biD-on-xGA" secondAttribute="bottom" constant="15" id="mYl-nC-gEX"/>
+                                <constraint firstItem="ksR-mU-gb3" firstAttribute="centerX" secondItem="VZa-tF-edo" secondAttribute="centerX" id="tw0-mp-Kmr"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="VZa-tF-edo" secondAttribute="trailing" id="24Y-xZ-uKU"/>
+                        <constraint firstItem="VZa-tF-edo" firstAttribute="top" secondItem="wEO-4W-uSo" secondAttribute="top" constant="10" id="423-Jz-fWk"/>
+                        <constraint firstItem="VZa-tF-edo" firstAttribute="leading" secondItem="wEO-4W-uSo" secondAttribute="leading" id="ClP-7l-YUg"/>
+                        <constraint firstAttribute="bottom" secondItem="VZa-tF-edo" secondAttribute="bottom" id="aKX-dH-UEv"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="VZa-tF-edo" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="5NG-ac-6bf"/>
                 <constraint firstAttribute="trailing" secondItem="tj5-1X-B2G" secondAttribute="trailing" id="FKl-w6-7il"/>
-                <constraint firstItem="5hw-4a-SXp" firstAttribute="top" secondItem="97a-Zy-HsX" secondAttribute="bottom" id="Iwg-QS-sqg"/>
-                <constraint firstAttribute="bottom" secondItem="5hw-4a-SXp" secondAttribute="bottom" id="QsR-vt-EsH"/>
-                <constraint firstAttribute="trailing" secondItem="5hw-4a-SXp" secondAttribute="trailing" id="UJW-Wo-CpM"/>
+                <constraint firstAttribute="trailing" secondItem="wEO-4W-uSo" secondAttribute="trailing" id="FqM-U0-ztF"/>
+                <constraint firstAttribute="bottom" secondItem="wEO-4W-uSo" secondAttribute="bottom" id="XAo-dP-sIe"/>
                 <constraint firstAttribute="trailing" secondItem="97a-Zy-HsX" secondAttribute="trailing" id="XFH-lN-0be"/>
                 <constraint firstItem="tj5-1X-B2G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bg8-Zg-IcP"/>
                 <constraint firstItem="97a-Zy-HsX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gvQ-Oy-DtM"/>
                 <constraint firstAttribute="bottom" secondItem="tj5-1X-B2G" secondAttribute="bottom" id="iOL-oO-ehr"/>
+                <constraint firstItem="wEO-4W-uSo" firstAttribute="top" secondItem="97a-Zy-HsX" secondAttribute="bottom" id="mr4-xf-X6y"/>
+                <constraint firstItem="wEO-4W-uSo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pzT-GC-ZdY"/>
                 <constraint firstItem="tj5-1X-B2G" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="q67-xL-axd"/>
-                <constraint firstItem="5hw-4a-SXp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="u4J-xf-RNx"/>
                 <constraint firstItem="97a-Zy-HsX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ygq-7t-xDy"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="102.5"/>
         </view>
     </objects>
     <resources>
+        <image name="1" width="120" height="120"/>
+        <image name="2" width="120" height="120"/>
         <image name="back" width="100" height="67"/>
         <image name="bg" width="1920" height="1200"/>
     </resources>
