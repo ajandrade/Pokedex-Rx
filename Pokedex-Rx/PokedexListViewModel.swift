@@ -16,7 +16,7 @@ protocol PokedexListViewModelRepresentable {
   var textToSearch: PublishSubject<String> { get }
   // Outputs
   var dataSource: Observable<[PokemonCellViewModelRepresentable]> { get }
-  var showDetails: Action<String, Void> { get }
+  var showDetails: Action<PokemonCellViewModelRepresentable, Void> { get }
 }
 
 class PokedexListViewModel: PokedexListViewModelRepresentable {
@@ -41,7 +41,7 @@ class PokedexListViewModel: PokedexListViewModelRepresentable {
   var dataSource: Observable<[PokemonCellViewModelRepresentable]> {
     return inputDataSource.asObservable()
   }
-  var showDetails: Action<String, Void>
+  var showDetails: Action<PokemonCellViewModelRepresentable, Void>
   
   // MARK: - INITIALIZER
   
@@ -59,7 +59,10 @@ class PokedexListViewModel: PokedexListViewModelRepresentable {
       inputDataSource.onError(err)
     }
     
-    showDetails = navigation.showDetails
+    showDetails = Action { cellViewModel in
+      let id = cellViewModel.pokemonId
+      return navigation.showDetails.execute(id)
+    }
     
     textToSearch
       .subscribe(onNext: { text in
