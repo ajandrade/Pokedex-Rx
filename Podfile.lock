@@ -2,6 +2,14 @@ PODS:
   - Action (3.1.1):
     - RxCocoa (~> 3.4)
     - RxSwift (~> 3.4)
+  - Alamofire (4.5.0)
+  - Moya/Core (8.0.5):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (8.0.5):
+    - Moya/Core
+    - RxSwift (~> 3.0)
+  - Result (3.2.3)
   - RxCocoa (3.6.1):
     - RxSwift (~> 3.6)
   - RxSwift (3.6.1)
@@ -9,16 +17,20 @@ PODS:
 
 DEPENDENCIES:
   - Action
+  - Moya/RxSwift
   - RxCocoa
   - RxSwift
   - SwiftLint
 
 SPEC CHECKSUMS:
   Action: e224bd151fe2e057f4189b4a9df0dc5d21264a9e
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
+  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
   SwiftLint: 1134786caedd2caab0560d2f36b76414a5a56808
 
-PODFILE CHECKSUM: f221cde0ae0ca7a26cbc79449af6322dffdd773b
+PODFILE CHECKSUM: 04e614bdc1060518b4215defa707b8fc62b845fb
 
 COCOAPODS: 1.2.1

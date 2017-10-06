@@ -12,6 +12,9 @@ target 'Pokedex-Rx' do
   pod 'RxCocoa'
   pod 'Action'
   
+  # Network
+  pod 'Moya/RxSwift'
+  
   # Best practices
   pod 'SwiftLint'
 
