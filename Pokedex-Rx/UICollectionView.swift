@@ -10,12 +10,12 @@ import UIKit
 
 extension UICollectionView {
   
-  func register<T: UICollectionViewCell>(_: T.Type) where T: Identifiable {
+  func register<T: UICollectionViewCell>(_: T.Type) {
     let nib = UINib(nibName: T.identifier, bundle: nil)
     register(nib, forCellWithReuseIdentifier: T.identifier)
   }
   
-  func dequeueCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T where T: Identifiable {
+  func dequeueCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
     guard let cell = dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as? T else {
       fatalError("Could not dequeuce cell with id: \(T.identifier)")
     }

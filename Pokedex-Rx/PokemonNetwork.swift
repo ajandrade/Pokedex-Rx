@@ -13,4 +13,3 @@ protocol PokemonNetworkProtocol { }
 struct PokemonNetwork: PokemonNetworkProtocol {
 
 }
-

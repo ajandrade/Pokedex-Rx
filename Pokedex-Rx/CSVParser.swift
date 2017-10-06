@@ -11,7 +11,7 @@ import Foundation
 public class CSVParser {
   
   var headers: [String] = []
-  var rows: [[String:String]] = []
+  var rows: [[String: String]] = []
   var columns = [String: [String]]()
   
   var delimiter = CharacterSet(charactersIn: ",")
@@ -38,7 +38,7 @@ public class CSVParser {
     } catch _ {
       csvString = nil
     }
-    try self.init(content: csvString, delimiter:comma, encoding:String.Encoding.utf8.rawValue)
+    try self.init(content: csvString, delimiter: comma, encoding: String.Encoding.utf8.rawValue)
   }
   
   
@@ -46,8 +46,8 @@ public class CSVParser {
     return lines[0].components(separatedBy: delimiter)
   }
   
-  private func parseRows(fromLines lines: [String]) -> [[String:String]] {
-    var rows: [[String:String]] = []
+  private func parseRows(fromLines lines: [String]) -> [[String: String]] {
+    var rows: [[String: String]] = []
     
     for (lineNumber, line) in lines.enumerated() {
       if lineNumber == 0 { continue }
@@ -67,7 +67,7 @@ public class CSVParser {
     return rows
   }
   
-  private func parseColumns(fromLines lines: [String]) -> [String:[String]] {
+  private func parseColumns(fromLines lines: [String]) -> [String: [String]] {
     var columns = [String: [String]]()
     
     for header in self.headers {
