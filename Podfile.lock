@@ -1,36 +1,64 @@
 PODS:
-  - Action (3.1.1):
-    - RxCocoa (~> 3.4)
-    - RxSwift (~> 3.4)
-  - Alamofire (4.5.0)
-  - Moya/Core (8.0.5):
+  - Action (3.3.0-alpha.1):
+    - RxCocoa (~> 4.0.0-alpha.1)
+    - RxSwift (~> 4.0.0-alpha.1)
+  - Alamofire (4.5.1)
+  - Moya/Core (9.0.0):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - Moya/RxSwift (8.0.5):
+  - Moya/RxSwift (9.0.0):
     - Moya/Core
-    - RxSwift (~> 3.0)
-  - Result (3.2.3)
-  - RxCocoa (3.6.1):
-    - RxSwift (~> 3.6)
-  - RxSwift (3.6.1)
-  - SwiftLint (0.22.0)
+    - RxSwift (= 4.0.0-beta.1)
+  - Result (3.2.4)
+  - RxCocoa (4.0.0-beta.1):
+    - RxSwift (~> 4.0.0-beta.1)
+  - RxSwift (4.0.0-beta.1)
+  - SwiftLint (0.23.0)
 
 DEPENDENCIES:
-  - Action
-  - Moya/RxSwift
-  - RxCocoa
-  - RxSwift
+  - Action (from `https://github.com/RxSwiftCommunity/Action.git`, branch `master`)
+  - Moya/RxSwift (from `https://github.com/Moya/Moya.git`, branch `10.0.0-dev`)
+  - RxCocoa (from `https://github.com/ReactiveX/RxSwift.git`, branch `rxswift4.0-swift4.0`)
+  - RxSwift (from `https://github.com/ReactiveX/RxSwift.git`, branch `rxswift4.0-swift4.0`)
   - SwiftLint
 
-SPEC CHECKSUMS:
-  Action: e224bd151fe2e057f4189b4a9df0dc5d21264a9e
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
-  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
-  RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
-  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
-  SwiftLint: 1134786caedd2caab0560d2f36b76414a5a56808
+EXTERNAL SOURCES:
+  Action:
+    :branch: master
+    :git: https://github.com/RxSwiftCommunity/Action.git
+  Moya:
+    :branch: 10.0.0-dev
+    :git: https://github.com/Moya/Moya.git
+  RxCocoa:
+    :branch: rxswift4.0-swift4.0
+    :git: https://github.com/ReactiveX/RxSwift.git
+  RxSwift:
+    :branch: rxswift4.0-swift4.0
+    :git: https://github.com/ReactiveX/RxSwift.git
 
-PODFILE CHECKSUM: 04e614bdc1060518b4215defa707b8fc62b845fb
+CHECKOUT OPTIONS:
+  Action:
+    :commit: 35130e4a4c4db0080679bddf84df0291f6c71a58
+    :git: https://github.com/RxSwiftCommunity/Action.git
+  Moya:
+    :commit: 9fa5482af72a34d792bf75a72242ceea0934153e
+    :git: https://github.com/Moya/Moya.git
+  RxCocoa:
+    :commit: aacfcc894bd3bc3ea1b03d483720973ea0e02905
+    :git: https://github.com/ReactiveX/RxSwift.git
+  RxSwift:
+    :commit: aacfcc894bd3bc3ea1b03d483720973ea0e02905
+    :git: https://github.com/ReactiveX/RxSwift.git
+
+SPEC CHECKSUMS:
+  Action: abad343221a84f1e1d127f88f450d3d62c7d96c3
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Moya: 14084c28d93d7ab1a4efd39e7edc95e5bff1f011
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxCocoa: 009b86b0b158d4a7e4a5fc29bbdc0688c44fa3bb
+  RxSwift: 9488787dfac649ffc1c4fddf3a3b4d6823d0b392
+  SwiftLint: 6ddf7d305644c2239cb768a11d97cce804816691
+
+PODFILE CHECKSUM: 738c2c1e4d72b6802e409f6af84cdbb0ed69f2a4
 
 COCOAPODS: 1.2.1

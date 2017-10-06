@@ -8,13 +8,13 @@ target 'Pokedex-Rx' do
   # Pods for Pokedex-Rx
 
   # FRP
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'Action'
+  pod 'RxSwift', git: 'https://github.com/ReactiveX/RxSwift.git', branch: 'rxswift4.0-swift4.0'
+  pod 'RxCocoa', git: 'https://github.com/ReactiveX/RxSwift.git', branch: 'rxswift4.0-swift4.0'
+  pod 'Action', git: 'https://github.com/RxSwiftCommunity/Action.git', branch: 'master'
   
   # Network
-  pod 'Moya/RxSwift'
-  
+  pod 'Moya/RxSwift', :git => 'https://github.com/Moya/Moya.git', :branch => '10.0.0-dev'
+
   # Best practices
   pod 'SwiftLint'
 
