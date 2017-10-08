@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 class RootCoordinator {
 
@@ -16,7 +17,7 @@ class RootCoordinator {
   fileprivate let navigator: NavigatorRepresentable
   
   // MARK: - PROPERTIES
-  
+
   fileprivate let dataDependencies = DataDependencies()
   
   // MARK: - INITIALIZER

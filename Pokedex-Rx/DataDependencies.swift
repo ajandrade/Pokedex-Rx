@@ -6,7 +6,7 @@
 //  Copyright © 2017 Amadeu Andrade. All rights reserved.
 //
 
-import Foundation
+import Moya
 
 struct DataDependencies: HasNetworkService, HasParsingService {
   
@@ -18,7 +18,8 @@ struct DataDependencies: HasNetworkService, HasParsingService {
   // MARK: - INITIALIZER
   
   init() {
-    networkService = PokemonNetwork()
+    let pokemonAPI = MoyaProvider<PokemonAPI>()
+    networkService = PokemonNetwork(provider: pokemonAPI)
     parserService = PokemonParser()
   }
   

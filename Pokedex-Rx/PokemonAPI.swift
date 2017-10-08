@@ -9,8 +9,8 @@
 import Moya
 
 enum PokemonAPI {
-  case get(id: Int)
-  case getEvolution(id: Int)
+  case get(id: String)
+  case getEvolution(id: String)
 }
 
 extension PokemonAPI: TargetType {
@@ -20,7 +20,7 @@ extension PokemonAPI: TargetType {
     case .get(let id):
       return "v2/pokemon/\(id)"
     case .getEvolution(let id):
-      return "v1/users/\(id)"
+      return "v1/pokemon/\(id)"
     }
   }
   var method: Moya.Method {

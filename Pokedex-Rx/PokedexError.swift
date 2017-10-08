@@ -9,9 +9,8 @@
 import Foundation
 
 enum PokedexError: Error {
-  // Parse
   case fileNotFound
-  case parse
+  case csvParse
 }
 
 extension PokedexError: LocalizedError {
@@ -20,7 +19,7 @@ extension PokedexError: LocalizedError {
     switch self {
     case .fileNotFound:
       return "The csv doesn't exist."
-    case .parse:
+    case .csvParse:
       return "There was an error while parsing the csv file."
     }
   }
