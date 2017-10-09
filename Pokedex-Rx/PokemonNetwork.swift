@@ -10,8 +10,8 @@ import Moya
 import RxSwift
 
 protocol PokemonNetworkProtocol {
-  func getPokemonInformation(with identifier: String) -> Observable<JSON>
-  func getEvolutions(with identifier: String) -> Observable<JSON>
+  func getPokemonInformation(with identifier: String) -> Observable<Data>
+  func getEvolutions(with identifier: String) -> Observable<Data>
 }
 
 struct PokemonNetwork: PokemonNetworkProtocol {
@@ -28,23 +28,23 @@ struct PokemonNetwork: PokemonNetworkProtocol {
   
   // MARK: - METHODS
   
-  func getPokemonInformation(with identifier: String) -> Observable<JSON> {
+  func getPokemonInformation(with identifier: String) -> Observable<Data> {
     return provider.rx
       .request(.get(id: identifier))
       .debug()
       .filterSuccessfulStatusCodes()
       .retry(3)
-      .mapJSONAndCast()
+      .map { $0.data }
       .asObservable()
   }
   
-  func getEvolutions(with identifier: String) -> Observable<JSON> {
+  func getEvolutions(with identifier: String) -> Observable<Data> {
     return provider.rx
       .request(.getEvolution(id: identifier))
       .debug()
       .filterSuccessfulStatusCodes()
       .retry(3)
-      .mapJSONAndCast()
+      .map { $0.data }
       .asObservable()
   }
   
