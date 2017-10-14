@@ -29,6 +29,7 @@ struct PokemonParser: PokemonParserProtocol {
   
   // swiftlint:disable identifier_name
   private enum Field: String { case identifier, id }
+  // swiftlint:enable identifier_name
   
   // MARK: - METHODS
   
