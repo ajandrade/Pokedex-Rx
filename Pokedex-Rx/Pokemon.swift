@@ -9,10 +9,44 @@
 import Foundation
 
 struct Pokemon {
-  let identifier: String
+  
+  // MARK: - PROPERTIES
+  
+  let identifier: Int
   let name: String
-  let height: String
-  let weight: String
-  let type: [PokemonType]
-  let stats: [Statistic]
+  let height: Int
+  let weight: Int
+  let type: PokemonTypes
+  let stats: PokemonStatistics
+  let evolution: PokemonEvolution?
+  
+  // MARK: - METHODS
+  
+  func updateEvolution(_ evolution: PokemonEvolution) -> Pokemon {
+    return Pokemon(identifier: identifier, name: name, height: height, weight: weight, type: type, stats: stats, evolution: evolution)
+  }
+  
+}
+
+extension Pokemon: Decodable {
+  
+  // MARK: - KEYS
+
+  enum CodingKeys: String, CodingKey { case identifier = "id", name, weight, height, types, stats }
+  
+  // MARK: - INITIALIZER
+
+  init(from decoder: Decoder) throws {
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+    identifier = try values.decode(Int.self, forKey: .identifier)
+    name = try values.decode(String.self, forKey: .name)
+    weight = try values.decode(Int.self, forKey: .weight)
+    height = try values.decode(Int.self, forKey: .height)
+    let types = try values.decode([PokemonRawType].self, forKey: .types)
+    type = PokemonTypes(types: types)
+    let statistics = try values.decode([PokemonRawStatistic].self, forKey: .stats)
+    stats = PokemonStatistics(stats: statistics)
+    evolution = nil
+  }
+
 }
