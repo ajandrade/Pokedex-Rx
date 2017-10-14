@@ -82,10 +82,8 @@ class PokedexListViewController: UIViewController, Alertable {
 
 extension PokedexListViewController: UICollectionViewDelegateFlowLayout {
   
-  // swiftlint:disable line_length
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: 105.0, height: 105.0)
   }
-  // swiftlint:enable line_length
   
 }

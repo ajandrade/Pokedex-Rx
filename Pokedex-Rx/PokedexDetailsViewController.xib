@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,6 +19,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PokedexDetailsViewController" customModule="Pokedex_Rx" customModuleProvider="target">
             <connections>
                 <outlet property="dismissButton" destination="mgc-JP-Pry" id="FuR-Cw-7qo"/>
+                <outlet property="pokemomEvolutionImageView" destination="dBu-0B-kMN" id="0sV-Yg-uWC"/>
+                <outlet property="pokemomEvolutionNameLabel" destination="Cl7-PY-vUa" id="PvY-bC-53I"/>
+                <outlet property="pokemomStatSpecialAttackLabel" destination="NQN-vi-WtK" id="rhZ-mY-PMt"/>
+                <outlet property="pokemomStatSpecialAttackProgressView" destination="MRw-BI-s1i" id="kXd-fa-NKP"/>
+                <outlet property="pokemomStatSpecialDefenseLabel" destination="0dN-T1-lkG" id="8DW-Kg-tmm"/>
+                <outlet property="pokemomStatSpecialDefenseProgressView" destination="tIt-6F-vuo" id="7aV-g8-mOH"/>
+                <outlet property="pokemonHeightLabel" destination="hWr-ct-nJC" id="YhB-06-Xpd"/>
+                <outlet property="pokemonIdLabel" destination="Lox-g9-fXK" id="ufI-VA-xne"/>
+                <outlet property="pokemonImageView" destination="o0b-0c-mcl" id="iuF-Lw-uCt"/>
+                <outlet property="pokemonNameLabel" destination="dXl-x5-xKD" id="eeY-gG-dil"/>
+                <outlet property="pokemonStatAttackLabel" destination="1dZ-V3-Dgt" id="Zh4-aB-H22"/>
+                <outlet property="pokemonStatAttackProgressView" destination="oOw-QE-J3L" id="aBL-cz-BJa"/>
+                <outlet property="pokemonStatDefenseLabel" destination="fgS-aC-GLE" id="8LI-SK-4NN"/>
+                <outlet property="pokemonStatDefenseProgressView" destination="c5a-gt-dBj" id="IOP-aw-ruX"/>
+                <outlet property="pokemonStatHpLabel" destination="yyi-GC-lcr" id="Qek-ea-VuE"/>
+                <outlet property="pokemonStatHpProgressView" destination="jUT-2T-N2Y" id="oyX-MI-QF9"/>
+                <outlet property="pokemonStatSpeedLabel" destination="Dco-Iw-Boh" id="yPg-yB-z2y"/>
+                <outlet property="pokemonStatSpeedProgressView" destination="oBn-2S-BHB" id="2cW-Wa-TLn"/>
+                <outlet property="pokemonTypeLabel" destination="hbI-yI-qQo" id="yPf-i7-F6r"/>
+                <outlet property="pokemonWeightLabel" destination="6g0-w5-opj" id="SQK-Sr-qUU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -74,7 +93,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fv2-AP-uz0">
                                             <rect key="frame" x="0.0" y="0.0" width="130" height="160.5"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="o0b-0c-mcl" userLabel="pokemonImg">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="o0b-0c-mcl" userLabel="pokemonImg">
                                                     <rect key="frame" x="0.0" y="0.0" width="130" height="130.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="130" id="5X0-bX-S1g"/>
@@ -404,15 +423,15 @@
                                 <constraint firstAttribute="height" constant="607" id="AIb-QM-Cya"/>
                                 <constraint firstItem="IHV-Lb-cdo" firstAttribute="leading" secondItem="VZa-tF-edo" secondAttribute="leading" id="AUy-U9-Ri6"/>
                                 <constraint firstAttribute="trailing" secondItem="zaQ-Ju-G6R" secondAttribute="trailing" constant="20" id="D9V-BX-w18"/>
+                                <constraint firstItem="ksR-mU-gb3" firstAttribute="top" secondItem="IHV-Lb-cdo" secondAttribute="bottom" constant="10" id="SLp-w1-MMV"/>
                                 <constraint firstItem="ibq-IM-Y3S" firstAttribute="leading" secondItem="VZa-tF-edo" secondAttribute="leading" id="Tdy-uO-kw5"/>
                                 <constraint firstItem="zaQ-Ju-G6R" firstAttribute="top" secondItem="ibq-IM-Y3S" secondAttribute="bottom" constant="20" id="Tgl-su-83C"/>
                                 <constraint firstAttribute="trailing" secondItem="ibq-IM-Y3S" secondAttribute="trailing" id="VCJ-Z6-Hsg"/>
                                 <constraint firstItem="biD-on-xGA" firstAttribute="top" secondItem="VZa-tF-edo" secondAttribute="top" constant="5" id="WWS-OW-tJB"/>
                                 <constraint firstAttribute="trailing" secondItem="IHV-Lb-cdo" secondAttribute="trailing" id="Wwz-xT-IPN"/>
+                                <constraint firstItem="ksR-mU-gb3" firstAttribute="centerX" secondItem="VZa-tF-edo" secondAttribute="centerX" id="gV3-6I-DBl"/>
                                 <constraint firstItem="IHV-Lb-cdo" firstAttribute="top" secondItem="zaQ-Ju-G6R" secondAttribute="bottom" constant="15" id="hrV-0r-SL9"/>
-                                <constraint firstItem="ksR-mU-gb3" firstAttribute="top" secondItem="IHV-Lb-cdo" secondAttribute="bottom" constant="10" id="iKS-S9-vee"/>
                                 <constraint firstItem="ibq-IM-Y3S" firstAttribute="top" secondItem="biD-on-xGA" secondAttribute="bottom" constant="15" id="mYl-nC-gEX"/>
-                                <constraint firstItem="ksR-mU-gb3" firstAttribute="centerX" secondItem="VZa-tF-edo" secondAttribute="centerX" id="tw0-mp-Kmr"/>
                             </constraints>
                         </view>
                     </subviews>
