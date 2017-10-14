@@ -21,6 +21,8 @@
                 <outlet property="dismissButton" destination="mgc-JP-Pry" id="FuR-Cw-7qo"/>
                 <outlet property="pokemomEvolutionImageView" destination="dBu-0B-kMN" id="0sV-Yg-uWC"/>
                 <outlet property="pokemomEvolutionNameLabel" destination="Cl7-PY-vUa" id="PvY-bC-53I"/>
+                <outlet property="pokemomLoadingLabel" destination="uvf-Qm-fqu" id="nRc-Ae-O9j"/>
+                <outlet property="pokemomLoadingView" destination="oOP-mW-GbD" id="132-DG-cej"/>
                 <outlet property="pokemomStatSpecialAttackLabel" destination="NQN-vi-WtK" id="rhZ-mY-PMt"/>
                 <outlet property="pokemomStatSpecialAttackProgressView" destination="MRw-BI-s1i" id="kXd-fa-NKP"/>
                 <outlet property="pokemomStatSpecialDefenseLabel" destination="0dN-T1-lkG" id="8DW-Kg-tmm"/>
@@ -442,15 +444,46 @@
                         <constraint firstAttribute="bottom" secondItem="VZa-tF-edo" secondAttribute="bottom" id="aKX-dH-UEv"/>
                     </constraints>
                 </scrollView>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOP-mW-GbD">
+                    <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="9Eb-0Y-O3W">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvf-Qm-fqu">
+                            <rect key="frame" x="20" y="183.5" width="335" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="LJY-dQ-sgW"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="PokemonPuzzleChallengeGB" family="Pokemon Puzzle Challenge GB" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="uvf-Qm-fqu" secondAttribute="centerY" constant="70" id="0gC-Fu-DWd"/>
+                        <constraint firstAttribute="trailing" secondItem="uvf-Qm-fqu" secondAttribute="trailing" constant="20" id="8aV-Rx-jj3"/>
+                        <constraint firstAttribute="trailing" secondItem="9Eb-0Y-O3W" secondAttribute="trailing" id="Om9-Ww-AIY"/>
+                        <constraint firstItem="9Eb-0Y-O3W" firstAttribute="leading" secondItem="oOP-mW-GbD" secondAttribute="leading" id="TmG-aj-Aj5"/>
+                        <constraint firstItem="9Eb-0Y-O3W" firstAttribute="top" secondItem="oOP-mW-GbD" secondAttribute="top" id="f9G-GC-7gr"/>
+                        <constraint firstAttribute="bottom" secondItem="9Eb-0Y-O3W" secondAttribute="bottom" id="iag-EB-Y96"/>
+                        <constraint firstItem="uvf-Qm-fqu" firstAttribute="leading" secondItem="oOP-mW-GbD" secondAttribute="leading" constant="20" id="wYo-mw-cC2"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="VZa-tF-edo" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="5NG-ac-6bf"/>
+                <constraint firstAttribute="bottom" secondItem="oOP-mW-GbD" secondAttribute="bottom" id="BdQ-PZ-uze"/>
                 <constraint firstAttribute="trailing" secondItem="tj5-1X-B2G" secondAttribute="trailing" id="FKl-w6-7il"/>
                 <constraint firstAttribute="trailing" secondItem="wEO-4W-uSo" secondAttribute="trailing" id="FqM-U0-ztF"/>
+                <constraint firstItem="oOP-mW-GbD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KuT-so-tBZ"/>
+                <constraint firstAttribute="trailing" secondItem="oOP-mW-GbD" secondAttribute="trailing" id="OcK-o8-aTT"/>
                 <constraint firstAttribute="bottom" secondItem="wEO-4W-uSo" secondAttribute="bottom" id="XAo-dP-sIe"/>
                 <constraint firstAttribute="trailing" secondItem="97a-Zy-HsX" secondAttribute="trailing" id="XFH-lN-0be"/>
                 <constraint firstItem="tj5-1X-B2G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bg8-Zg-IcP"/>
+                <constraint firstItem="oOP-mW-GbD" firstAttribute="top" secondItem="97a-Zy-HsX" secondAttribute="bottom" id="ddh-Zl-zmx"/>
                 <constraint firstItem="97a-Zy-HsX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gvQ-Oy-DtM"/>
                 <constraint firstAttribute="bottom" secondItem="tj5-1X-B2G" secondAttribute="bottom" id="iOL-oO-ehr"/>
                 <constraint firstItem="wEO-4W-uSo" firstAttribute="top" secondItem="97a-Zy-HsX" secondAttribute="bottom" id="mr4-xf-X6y"/>

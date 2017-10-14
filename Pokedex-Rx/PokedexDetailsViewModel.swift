@@ -82,32 +82,31 @@ struct PokedexDetailsViewModel: PokedexDetailsViewModelRepresentable {
     
     dismiss = navigation.dismiss
     
-    let pokemonInfo = getPokemonInfo(with: pokemonId)
-      .share()
+    let pokemonInfo = getPokemonInfo(with: pokemonId).share()
     
-    pokemonName = pokemonInfo.map { $0.name.capitalized }
-    pokemonIdentifier = pokemonInfo.map { "\($0.identifier)" }
-    pokemonImageName = pokemonInfo.map { "\($0.identifier)" }
-    pokemonHeight = pokemonInfo.map { "\($0.height)" }
-    pokemonWeight = pokemonInfo.map { "\($0.weight)" }
-    pokemonType = pokemonInfo.map { $0.type.name.capitalized }
+    pokemonName = pokemonInfo.map { $0.name.capitalized }.catchErrorJustReturn("")
+    pokemonIdentifier = pokemonInfo.map { "\($0.identifier)" }.catchErrorJustReturn("")
+    pokemonImageName = pokemonInfo.map { "\($0.identifier)" }.catchErrorJustReturn("")
+    pokemonHeight = pokemonInfo.map { "\($0.height)" }.catchErrorJustReturn("")
+    pokemonWeight = pokemonInfo.map { "\($0.weight)" }.catchErrorJustReturn("")
+    pokemonType = pokemonInfo.map { $0.type.name.capitalized }.catchErrorJustReturn("")
     
-    pokemonSpeed  = pokemonInfo.map { "\($0.stats.speed)" }
-    pokemonSpecialDefense  = pokemonInfo.map { "\($0.stats.specialDefense)" }
-    pokemonSpecialAttack  = pokemonInfo.map { "\($0.stats.specialAttack)" }
-    pokemonAttack  = pokemonInfo.map { "\($0.stats.attack)" }
-    pokemonDefense  = pokemonInfo.map { "\($0.stats.defense)" }
-    pokemonHP  = pokemonInfo.map { "\($0.stats.healthPoints)" }
+    pokemonSpeed  = pokemonInfo.map { "\($0.stats.speed)" }.catchErrorJustReturn("")
+    pokemonSpecialDefense  = pokemonInfo.map { "\($0.stats.specialDefense)" }.catchErrorJustReturn("")
+    pokemonSpecialAttack  = pokemonInfo.map { "\($0.stats.specialAttack)" }.catchErrorJustReturn("")
+    pokemonAttack  = pokemonInfo.map { "\($0.stats.attack)" }.catchErrorJustReturn("")
+    pokemonDefense  = pokemonInfo.map { "\($0.stats.defense)" }.catchErrorJustReturn("")
+    pokemonHP  = pokemonInfo.map { "\($0.stats.healthPoints)" }.catchErrorJustReturn("")
     
-    pokemonSpeedLevel = pokemonInfo.map { Float($0.stats.speed)/200 }
-    pokemonSpecialAttackLevel = pokemonInfo.map { Float($0.stats.specialAttack)/200 }
-    pokemonSpecialDefenseLevel = pokemonInfo.map { Float($0.stats.specialDefense)/200 }
-    pokemonDefenseLevel = pokemonInfo.map { Float($0.stats.defense)/200 }
-    pokemonAttackLevel = pokemonInfo.map { Float($0.stats.attack)/200 }
-    pokemonHPLevel = pokemonInfo.map { Float($0.stats.healthPoints)/200 }
+    pokemonSpeedLevel = pokemonInfo.map { Float($0.stats.speed)/200 }.catchErrorJustReturn(0)
+    pokemonSpecialAttackLevel = pokemonInfo.map { Float($0.stats.specialAttack)/200 }.catchErrorJustReturn(0)
+    pokemonSpecialDefenseLevel = pokemonInfo.map { Float($0.stats.specialDefense)/200 }.catchErrorJustReturn(0)
+    pokemonDefenseLevel = pokemonInfo.map { Float($0.stats.defense)/200 }.catchErrorJustReturn(0)
+    pokemonAttackLevel = pokemonInfo.map { Float($0.stats.attack)/200 }.catchErrorJustReturn(0)
+    pokemonHPLevel = pokemonInfo.map { Float($0.stats.healthPoints)/200 }.catchErrorJustReturn(0)
     
-    pokemonEvolutionName = pokemonInfo.map { $0.evolution?.name ?? "No evolution" }
-    pokemonEvolutionImageName = pokemonInfo.map { return ($0.evolution != nil) ? "\($0.evolution!.identifier)" : nil }
+    pokemonEvolutionName = pokemonInfo.map { $0.evolution?.name ?? "No evolution" }.catchErrorJustReturn("")
+    pokemonEvolutionImageName = pokemonInfo.map { return ($0.evolution != nil) ? "\($0.evolution!.identifier)" : nil }.catchErrorJustReturn(nil)
     
     didFinishGettingPokemon = pokemonInfo.map { _ in Void() }
     
