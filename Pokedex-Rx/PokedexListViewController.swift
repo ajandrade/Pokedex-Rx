@@ -36,6 +36,7 @@ class PokedexListViewController: UIViewController, Alertable {
     super.viewDidLoad()
     bindCollectionView()
     bindSearchBar()
+    bindActions()
   }
   
   // MARK: - BINDINGS
@@ -76,6 +77,10 @@ class PokedexListViewController: UIViewController, Alertable {
       .subscribe(onNext: { [weak self] _ in self?.view.endEditing(true) })
       .disposed(by: bag)
     
+  }
+  
+  private func bindActions() {
+    musicButton.rx.action = viewModel.playAudio
   }
   
 }

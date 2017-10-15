@@ -17,6 +17,7 @@ protocol PokedexListViewModelRepresentable {
   // Outputs
   var dataSource: Observable<[PokemonCellViewModelRepresentable]> { get }
   var showDetails: Action<PokemonCellViewModelRepresentable, Void> { get }
+  var playAudio: CocoaAction { get }
 }
 
 class PokedexListViewModel: PokedexListViewModelRepresentable {
@@ -31,6 +32,7 @@ class PokedexListViewModel: PokedexListViewModelRepresentable {
   private let bag = DisposeBag()
   private let allData: [PokemonCellViewModelRepresentable]
   private var inputDataSource = BehaviorSubject<[PokemonCellViewModelRepresentable]>(value: [])
+  private let audioPlayer = AudioPlayer()
 
   // MARK: - INPUT PROPERTIES
   
@@ -43,6 +45,17 @@ class PokedexListViewModel: PokedexListViewModelRepresentable {
   }
   var showDetails: Action<PokemonCellViewModelRepresentable, Void>
   
+  var playAudio: CocoaAction {
+    return CocoaAction { _ in
+      if self.audioPlayer.isPlaying {
+        self.audioPlayer.stopAudio()
+      } else {
+        self.audioPlayer.playAudio()
+      }
+      return .empty()
+    }
+  }
+
   // MARK: - INITIALIZER
   
   init(dataDependencies: DependenciesList, navigation: PokedexListNavigation) {
@@ -72,6 +85,5 @@ class PokedexListViewModel: PokedexListViewModelRepresentable {
       .disposed(by: bag)
     
   }
-
 
 }

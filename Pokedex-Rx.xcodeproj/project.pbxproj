@@ -49,6 +49,7 @@
 		E05C7FC11F87873000C83360 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05C7FC01F87873000C83360 /* String.swift */; };
 		E05C7FC31F878B8300C83360 /* PokemonNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05C7FC21F878B8300C83360 /* PokemonNetwork.swift */; };
 		E0C829BB1F926D660042A3C8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C829BA1F926D660042A3C8 /* Launch Screen.storyboard */; };
+		E0C829BD1F926DE80042A3C8 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C829BC1F926DE80042A3C8 /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		E05C7FC01F87873000C83360 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		E05C7FC21F878B8300C83360 /* PokemonNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonNetwork.swift; sourceTree = "<group>"; };
 		E0C829BA1F926D660042A3C8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E0C829BC1F926DE80042A3C8 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				E0196ABB1F6EF0DF0066E959 /* CSVParser.swift */,
+				E0C829BC1F926DE80042A3C8 /* AudioPlayer.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 			files = (
 				E0196A941F6EC7200066E959 /* Coordinator.swift in Sources */,
 				E0196A9C1F6EC7F20066E959 /* PokedexListViewController.swift in Sources */,
+				E0C829BD1F926DE80042A3C8 /* AudioPlayer.swift in Sources */,
 				E0196AC91F7192E40066E959 /* Result.swift in Sources */,
 				E04257461F8C0BD30091A55D /* PokemonTypes.swift in Sources */,
 				E0196AAC1F6ECDDD0066E959 /* UICollectionViewCell.swift in Sources */,
